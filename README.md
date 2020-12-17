@@ -26,15 +26,15 @@ run following commands in app root folder in order to set
 
 Create a Cab resource
 
-```curl --location --request POST 'localhost:3000/cabs' \
---header 'Content-Type: application/json' \
---data-raw '{
+```
+curl --location --request POST 'localhost:3000/cabs' --header 'Content-Type: application/json' --data-raw '{
 	"cab": {
 		"number" : 2,
 		"city_id": 1,
 		"state": "idle"
 	}
-}'```
+}' 
+```
 
 
 
