@@ -64,5 +64,12 @@ curl --location --request POST 'localhost:3000/cabs/book_ride?city_id=1' \
 --header 'Content-Type: application/json'
 ```
 
+Change City
+
+```
+curl --location --request PATCH 'localhost:3000/cabs/2/update_city?city_id=12' \
+--header 'Content-Type: application/json'
+```
+
 
 

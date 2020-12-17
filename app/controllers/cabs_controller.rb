@@ -31,8 +31,8 @@ class CabsController < ApplicationController
     end
 
     def update_city
-        @cab = Cab.find(params[:city_id])
-        if @cab.update(city_id: params[:new_city_id])
+        @cab = Cab.find(params[:id])
+        if @cab.update(city_id: params[:city_id])
             render :json => @cab
         else
             render :json => {error: @cab.errors.full_messages}, :status => :bad_request

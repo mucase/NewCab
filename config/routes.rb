@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     member do
       post :book
       post :end_trip
-      post :update_city
+      patch :update_city
     end
 
     collection do 
