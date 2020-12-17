@@ -13,4 +13,5 @@ Rails.application.routes.draw do
       post :book_ride
     end
   end
+  resources :cities, only: [:create]
 end

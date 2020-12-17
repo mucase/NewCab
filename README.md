@@ -84,3 +84,15 @@ Book (change state to on_trip)
 curl --location --request POST 'localhost:3000/cabs/2/book' \
 --header 'Content-Type: application/json'
 ```
+
+Onboard City
+
+```
+curl --location --request POST 'localhost:3000/cities' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"city": {
+		"name": "City"
+	}
+}'
+```
