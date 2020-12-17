@@ -71,5 +71,16 @@ curl --location --request PATCH 'localhost:3000/cabs/2/update_city?city_id=12' \
 --header 'Content-Type: application/json'
 ```
 
+End Trip (change state to idle)
 
+```
+curl --location --request POST 'localhost:3000/cabs/2/end_trip' \
+--header 'Content-Type: application/json'
+```
 
+Book (change state to on_trip)
+
+```
+curl --location --request POST 'localhost:3000/cabs/2/book' \
+--header 'Content-Type: application/json'
+```
