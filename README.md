@@ -14,6 +14,7 @@ This portal is able to:
 run following commands in app root folder in order to set
 
 `bundle install`
+
 `rails db:migrate`
 
 ### How to run
@@ -34,6 +35,25 @@ curl --location --request POST 'localhost:3000/cabs' --header 'Content-Type: app
 		"state": "idle"
 	}
 }' 
+```
+
+Onboard cabs in Bulk
+
+```
+curl --location --request POST 'localhost:3000/cabs/bulk_onboard' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"cabs": [{
+		"number" : 3,
+		"city_id": 1,
+		"state": "idle"
+	},
+	{
+		"number" : 4,
+		"city_id": 1,
+		"state": "on_trip"
+	}]
+}'
 ```
 
 

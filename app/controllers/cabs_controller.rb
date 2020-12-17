@@ -6,16 +6,16 @@ class CabsController < ApplicationController
         if @cab.save
             render :json => @cab
         else
-            render :json => {error: @cab.error_messages}, :status => :bad_request
+            render :json => {error: @cab.errors.full_messages}, :status => :bad_request
         end
     end
 
     def bulk_onboard
-        @cabs = Cab.insert_all(cabs_params)
-        if @cabs.save
+        @cabs = Cab.create(cabs_params[:cabs])
+        if @cabs
             render :json => @cabs
         else
-            render :json => {error: @cabs.error_messages}, :status => :bad_request
+            render :json => {error: @cabs.errors.full_messages}, :status => :bad_request
         end
     end
 
@@ -25,7 +25,7 @@ class CabsController < ApplicationController
         if @cab.book
             render :json => @cab
         else
-            render :json => {error: @cab.error_messages}, :status => :bad_request
+            render :json => {error: @cab.errors.full_messages}, :status => :bad_request
         end
     end
 
@@ -34,7 +34,7 @@ class CabsController < ApplicationController
         if @cab.update(city_id: params[:new_city_id])
             render :json => @cab
         else
-            render :json => {error: @cab.error_messages}, :status => :bad_request
+            render :json => {error: @cab.errors.full_messages}, :status => :bad_request
         end
     end
 
@@ -43,7 +43,7 @@ class CabsController < ApplicationController
         if @cab.book
             render :json => @cab
         else
-            render :json => {error: @cab.error_messages}, :status => :bad_request
+            render :json => {error: @cab.errors.full_messages}, :status => :bad_request
         end
     end
 
@@ -52,7 +52,7 @@ class CabsController < ApplicationController
         if @cab.end_trip
             render :json => @cab
         else
-            render :json => {error: @cab.error_messages}, :status => :bad_request
+            render :json => {error: @cab.errors.full_messages}, :status => :bad_request
         end
     end
 
