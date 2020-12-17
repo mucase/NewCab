@@ -1,24 +1,43 @@
-# README
+# Cab Management Portal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Implemented using Rails 6.0 with ruby '2.6.3'.
 
-Things you may want to cover:
+This portal is able to:
+* Register cabs.
+* Onboard various cities where cab services are provided.
+* Change current city (location) of any cab.
+* Change state of any cab.
+* Book cabs based on their availability at a certain location.
 
-* Ruby version
+### How to setup
 
-* System dependencies
+run following commands in app root folder in order to set
 
-* Configuration
+`bundle install`
+`rails db:migrate`
 
-* Database creation
+### How to run
 
-* Database initialization
+`rails server`
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### REST APIs 
 
-* Deployment instructions
 
-* ...
+Create a Cab resource
+
+```curl --location --request POST 'localhost:3000/cabs' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"cab": {
+		"number" : 2,
+		"city_id": 1,
+		"state": "idle"
+	}
+}'```
+
+
+
+
+
+

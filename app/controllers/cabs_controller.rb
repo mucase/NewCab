@@ -2,7 +2,7 @@ class CabsController < ApplicationController
 
 
     def create
-        @cab = Cab.save(cab_params)
+        @cab = Cab.new(cab_params)
         if @cab.save
             render :json => @cab
         else
