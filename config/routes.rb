@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     collection do 
       post :bulk_onboard
+      post :book_ride
     end
   end
 end

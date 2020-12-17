@@ -22,10 +22,11 @@ class CabsController < ApplicationController
     # takes location/city
     def book_ride
         @cab = Cab.nearest_available(params[:city_id])
-        if @cab.book
+        if @cab
+            @cab.book
             render :json => @cab
         else
-            render :json => {error: @cab.errors.full_messages}, :status => :bad_request
+            render :json => {error: "No Available Cabs in your area"}, :status => :not_found
         end
     end
 

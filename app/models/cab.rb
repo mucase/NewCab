@@ -26,8 +26,8 @@ class Cab < ApplicationRecord
         update_transition_time
     end
 
-    def nearest_available(city_id)
-        Cab.where(city_id: '', state: 'idle')
+    def self.nearest_available(city_id)
+        Cab.where(city_id: city_id, state: 'idle')
             .order(transition_at: :desc)
             .first
     end

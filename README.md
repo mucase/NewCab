@@ -57,7 +57,12 @@ curl --location --request POST 'localhost:3000/cabs/bulk_onboard' \
 ```
 
 
+Book a ride 
 
+```
+curl --location --request POST 'localhost:3000/cabs/book_ride?city_id=1' \
+--header 'Content-Type: application/json'
+```
 
 
 
